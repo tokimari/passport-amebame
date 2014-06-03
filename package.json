@@ -1,14 +1,29 @@
 {
   "name": "passport-amebame",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Amebame authentication strategy for passport",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "main": "./lib/passport-amebame",
   "keywords": [
-    "passport"
+    "passport",
+    "amebame",
+    "auth"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hiroosak/passport-amebame.git"
+  },
+  "engines": { "node": ">= 0.10.0" },
   "author": "Hirotaka Osaki",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "passport-oauth2": "^1.1.2",
+    "pkginfo": "^0.2.3"
+  },
+  "devDependencies": {
+    "sinon": "^1.10.2",
+    "vows": "~0.7.0"
+  },
+  "scripts": {
+    "test": "NODE_PATH=lib node_modules/.bin/vows test/*.test.js"
+  }
 }
