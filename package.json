@@ -1,0 +1,14 @@
+{
+  "name": "passport-amebame",
+  "version": "0.0.1",
+  "description": "Amebame authentication strategy for passport",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "passport"
+  ],
+  "author": "Hirotaka Osaki",
+  "license": "MIT"
+}
