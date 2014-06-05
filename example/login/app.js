@@ -61,27 +61,29 @@ app.get('/redirect_test', AmebameService.redirectRegisterPage({
   sandbox: true
 }));
 
-app.get('/login_callback', function(req, res) {
-  passport.authenticate('amebame', function(err, user) {
-    if (err) {
-      //
-      // AmebameNotRegisteredError の場合, amebameのregisterが完了していない.
-      //
-      if (err.name === 'AmebameNotRegisteredError') {
-        AmebameService.redirectRegisterPage({
-          clientID: clientId,
-          registerCallbackURL: "http://localhost:3001",
-          sandbox: true
-        })(req, res);
-      } else {
-        res.redirect('/?ok=0');
-      }
-    } else {
-      console.log('user', user);
-      res.redirect('/?ok=1');
-    }
-  })(req, res);
-});
+app.get('/login_callback',
+        function(req, res, next) { // registerしていないときは 登録画面に遷移させる
+          passport.authenticate('amebame', function(err, user) {
+            if (err) {
+              if (err.name === 'AmebameNotRegisteredError') {
+                AmebameService.redirectRegisterPage({
+                  clientID: clientId,
+                  registerCallbackURL: "http://localhost",
+                  sandbox: true
+                })(req, res);
+              } else {
+                res.redirect('/?ng=0');
+              }
+            } else {
+              if (!user) {
+                return res.redirect('/?ok=1');
+              }
+              req.login(user, {session: true}, function() {
+                res.redirect('/?ok=2');
+              });
+            }
+          })(req, res, next);
+        });
 
 app.use('/', function(req, res) {
   var status = 'login';
