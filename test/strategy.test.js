@@ -62,8 +62,8 @@ vows.describe('AmebameStrategy').addBatch({
       'should eql id': function(err, profile) {
         assert.equal(profile.id, "45148");
       },
-      'should eql name': function(err, profile) {
-        assert.equal(profile.name, "ame2");
+      'should eql displayName': function(err, profile) {
+        assert.equal(profile.displayName, "ame2");
       },
       'should eql imageUrl': function(err, profile) {
         assert.equal(profile.imageUrl, "http://api.sb-amebame.com/graph/45148/picture");
