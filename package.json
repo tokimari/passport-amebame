@@ -1,6 +1,6 @@
 {
   "name": "passport-amebame",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Amebame authentication strategy for passport",
   "main": "./lib/passport-amebame",
   "keywords": [

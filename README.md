@@ -7,7 +7,7 @@
 ## install
 
 ```
-$ npm install git+ssh://git@ghe.amb.ca.local:osaki-hirotaka/passport-amebame --save
+$ npm install passport-amebame --save
 ```
 
 ## 使い方
