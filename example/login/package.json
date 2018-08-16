@@ -8,11 +8,11 @@
   "dependencies": {
     "body-parser": "~1.0.0",
     "cookie-parser": "~1.0.1",
-    "debug": "~0.7.4",
+    "debug": "^3.1.0",
     "express": "~4.2.0",
     "express-session": "^1.2.1",
     "morgan": "~1.0.0",
     "passport": "^0.2.0",
-    "passport-amebame": "git+ssh://git@github.com:hiroosak/passport-amebame"
+    "passport-amebame": "git+ssh://git@github.com:openameba/passport-amebame"
   }
 }
