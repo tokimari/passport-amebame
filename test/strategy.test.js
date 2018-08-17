@@ -118,7 +118,7 @@ vows.describe('AmebameStrategy').addBatch({
           strategy.authenticate(req, options);
 
           // TODO: parse querystring
-          redirectUrl = 'https://sb.dauth.user.ameba.jp/authorize?frm_id=frmId&display=page&response_type=code&redirect_uri=&scope=profile%2Capplication%2Cconnection%2Cphoto%2Ccoin&client_id=ABC123';
+          redirectUrl = 'https://sb.dauth.user.ameba.jp/authorize?frm_id=frmId&response_type=code&redirect_uri=&scope=profile%2Capplication%2Cconnection%2Cphoto%2Ccoin&client_id=ABC123';
           self.callback(strategy.redirect.withArgs(redirectUrl).calledOnce);
         });
       },
